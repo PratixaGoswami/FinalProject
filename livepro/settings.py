@@ -40,11 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
 
-    #allauth 
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
+ 
     
 ]
 
@@ -56,14 +52,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
+    
 
-#allauth
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',  # Default ModelBackend
-    'allauth.account.auth_backends.AuthenticationBackend',  # Allauth authentication backend for social authentication
-]
+
 
 ROOT_URLCONF = 'livepro.urls'
 
@@ -154,22 +146,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pratixagosai2000@gmail.com'
+EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
-#allauth
-LOGIN_REDIRECT_URL = '/'
 
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': ['profile', 'email'],
-        'APP': {
-            'client_id': '',
-            'secret': '',
-            'key': ''
-        }
-    }
-}
 
 #admin penal customisation
 JAZZMIN_UI_TWEAKS = {
